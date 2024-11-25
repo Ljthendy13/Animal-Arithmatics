@@ -1,2 +1,3 @@
- a= 40
- print("a")
+a= 40
+print("a")
+print('Hello, world')
