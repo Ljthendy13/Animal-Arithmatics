@@ -13,6 +13,9 @@ public class ExampleScriptGitHubTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (variable1 == vareibale 2)
+        {
+            nruionaoe
+        }
     }
 }
