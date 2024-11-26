@@ -27,6 +27,19 @@ public class Questions : MonoBehaviour
     public string answerNine = "Answer Nine";
     public string answerTen = "Answer Ten";
     
+    public bool answeredOne = false;
+    public bool answeredTwo = false;
+    public bool answeredThree = false;
+    public bool answeredFour = false;
+    public bool answeredFive = false;
+    public bool answeredSix = false;
+    public bool answeredSeven = false;
+    public bool answeredEight = false;
+    public bool answeredNine = false;
+    public bool answeredTen = false;
+    
+    public bool questionUp = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +49,9 @@ public class Questions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (questionUp == false)
+            {
+                int currentQuestion = new random.randint(0,9);
+            }
     }
 }
