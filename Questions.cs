@@ -40,6 +40,8 @@ public class Questions : MonoBehaviour
     
     public bool questionUp = false;
 
+    public int currentQuestion = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,7 @@ public class Questions : MonoBehaviour
     {
         if (questionUp == false)
         {
-            int currentQuestion = Random.Range(0,10);
+            currentQuestion = Random.Range(0,10);
             if (currentQuestion == 0)
             {
                 if (answeredOne == false)
