@@ -220,7 +220,7 @@ public class Questions : MonoBehaviour
 
     public void AnsweredEight()
     {
-        if (currentQuestion == 8)
+        if (currentQuestion == 7)
         {
             answeredEight = true;
             questionUp = false;
