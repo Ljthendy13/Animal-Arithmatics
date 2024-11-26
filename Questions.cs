@@ -125,6 +125,38 @@ public class Questions : MonoBehaviour
                 }
             }
         }
+
+        if (answeredOne == true)
+        {
+            if (answeredTwo == true)
+            {
+                if (answeredThree == true)
+                {
+                    if (answeredFour == true)
+                    {
+                        if (answeredFive == true)
+                        {
+                            if (answeredSix == true)
+                            {
+                                if (answeredSeven == true)
+                                {
+                                    if (answeredEight == true)
+                                    {
+                                        if (answeredNine == true)
+                                        {
+                                            if (answeredTen == true)
+                                            {
+                                                Debug.Log("Level Cleared.");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void AnsweredOne()
