@@ -42,10 +42,30 @@ public class Questions : MonoBehaviour
 
     public int currentQuestion = 0;
 
+    public GameObject barOne;
+    public GameObject barTwo;
+    public GameObject barThree;
+    public GameObject barFour;
+    public GameObject barFive;
+    public GameObject barSix;
+    public GameObject barSeven;
+    public GameObject barEight;
+    public GameObject barNine;
+    public GameObject barTen;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        barOne.SetActive(true);
+        barTwo.SetActive(true);
+        barThree.SetActive(true);
+        barFour.SetActive(true);
+        barFive.SetActive(true);
+        barSix.SetActive(true);
+        barSeven.SetActive(true);
+        barEight.SetActive(true);
+        barNine.SetActive(true);
+        barTen.SetActive(true);
     }
 
     // Update is called once per frame
@@ -163,6 +183,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 0)
         {
+            barOne.SetActive(false);
             answeredOne = true;
             questionUp = false;
         }
@@ -176,6 +197,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 1)
         {
+            barTwo.SetActive(false);
             answeredTwo = true;
             questionUp = false;
         }
@@ -189,6 +211,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 2)
         {
+            barThree.SetActive(false);
             answeredThree = true;
             questionUp = false;
         }
@@ -202,6 +225,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 3)
         {
+            barFour.SetActive(false);
             answeredFour = true;
             questionUp = false;
         }
@@ -215,6 +239,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 4)
         {
+            barFive.SetActive(false);
             answeredFive = true;
             questionUp = false;
         }
@@ -228,6 +253,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 5)
         {
+            barSix.SetActive(false);
             answeredSix = true;
             questionUp = false;
         }
@@ -241,6 +267,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 6)
         {
+            barSeven.SetActive(false);
             answeredSeven = true;
             questionUp = false;
         }
@@ -254,6 +281,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 7)
         {
+            barEight.SetActive(false);
             answeredEight = true;
             questionUp = false;
         }
@@ -267,6 +295,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 8)
         {
+            barNine.SetActive(false);
             answeredNine = true;
             questionUp = false;
         }
@@ -280,6 +309,7 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 9)
         {
+            barTen.SetActive(false);
             answeredTen = true;
             questionUp = false;
         }
