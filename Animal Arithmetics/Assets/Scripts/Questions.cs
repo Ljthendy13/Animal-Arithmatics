@@ -43,6 +43,7 @@ public class Questions : MonoBehaviour
     public bool questionUp = false;
 
     public int currentQuestion = 0;
+    public string currentQuestionText = "";
 
     public GameObject barOne;
     public GameObject barTwo;
@@ -55,9 +56,138 @@ public class Questions : MonoBehaviour
     public GameObject barNine;
     public GameObject barTen;
 
+    public GameObject questionText;
+
     // Start is called before the first frame update
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene == "Level 1")
+        {
+            questionOne = "What is 2 + 1?";
+            questionTwo = "What is 3 + 2?";
+            questionThree = "What is 5 - 1?";
+            questionFour = "What is 6 - 4?";
+            questionFive = "What is 4 + 4?";
+            questionSix = "What is 8 - 2?";
+            questionSeven = "What is 7 - 6?";
+            questionEight = "What is 2 + 5?";
+            questionNine = "What is 6 - 6?";
+            questionTen = "What is 4 + 5?";
+
+            answerOne = "3";
+            answerTwo = "5";
+            answerThree = "4";
+            answerFour = "2";
+            answerFive = "8";
+            answerSix = "6";
+            answerSeven = "1";
+            answerEight = "7";
+            answerNine = "0";
+            answerTen = "9";
+        }
+        else if (scene == "Level 2")
+        {
+            questionOne = "What is 7 + 3?";
+            questionTwo = "What is 10 - 4?";
+            questionThree = "What is 9 - 5?";
+            questionFour = "What is 8 + 6?";
+            questionFive = "What is 10 + 2?";
+            questionSix = "What is 14 - 7?";
+            questionSeven = "What is 5 + 6?";
+            questionEight = "What is 9 + 3?";
+            questionNine = "What is 12 - 9?";
+            questionTen = "What is 15 - 7?";
+
+            answerOne = "10";
+            answerTwo = "6";
+            answerThree = "4";
+            answerFour = "14";
+            answerFive = "12";
+            answerSix = "7";
+            answerSeven = "11";
+            answerEight = "12";
+            answerNine = "3";
+            answerTen = "8";
+        }
+        else if (scene == "Level 3")
+        {
+            questionOne = "What is 3 x 2?";
+            questionTwo = "What is 4 x 2?";
+            questionThree = "What is 12 ÷ 3?";
+            questionFour = "What is 6 x 2?";
+            questionFive = "What is 9 ÷ 3?";
+            questionSix = "What is 7 x 2?";
+            questionSeven = "What is 8 ÷ 4?";
+            questionEight = "What is 10 ÷ 2?";
+            questionNine = "What is 5 x 3?";
+            questionTen = "What is 20 ÷ 2?";
+
+            answerOne = "6";
+            answerTwo = "8";
+            answerThree = "4";
+            answerFour = "12";
+            answerFive = "3";
+            answerSix = "14";
+            answerSeven = "2";
+            answerEight = "5";
+            answerNine = "15";
+            answerTen = "10";
+        }
+        else if (scene == "Level 4")
+        {
+            questionOne = "What is 8 x 3?";
+            questionTwo = "What is 18 ÷ 6?";
+            questionThree = "What is 6 x 5?";
+            questionFour = "What is 24 ÷ 4?";
+            questionFive = "What is 7 x 5?";
+            questionSix = "What is 20 ÷ 5?";
+            questionSeven = "What is 9 x 2?";
+            questionEight = "What is 30 ÷ 6?";
+            questionNine = "What is 12 x 3?";
+            questionTen = "What is 40 ÷ 4?";
+
+            answerOne = "24";
+            answerTwo = "3";
+            answerThree = "30";
+            answerFour = "6";
+            answerFive = "35";
+            answerSix = "4";
+            answerSeven = "18";
+            answerEight = "5";
+            answerNine = "36";
+            answerTen = "10";
+        }
+        else if (scene == "Level 5")
+        {
+            questionOne = "What is 12 x 3?";
+            questionTwo = "What is 36 ÷ 6?";
+            questionThree = "What is 8 x 4?";
+            questionFour = "What is 32 ÷ 4?";
+            questionFive = "What is 9 x 5?";
+            questionSix = "What is 45 ÷ 5?";
+            questionSeven = "What is 6 x 7?";
+            questionEight = "What is 49 ÷ 7?";
+            questionNine = "What is 5 x 7?";
+            questionTen = "What is 55 ÷ 5?";
+
+            answerOne = "36";
+            answerTwo = "6";
+            answerThree = "32";
+            answerFour = "8";
+            answerFive = "45";
+            answerSix = "9";
+            answerSeven = "42";
+            answerEight = "7";
+            answerNine = "35";
+            answerTen = "11";
+        }
+        else
+        {
+            Debug.Log("You aren't supposed to be here.");
+        }
+
         barOne = GameObject.Find("Bar1");
         barTwo = GameObject.Find("Bar2");
         barThree = GameObject.Find("Bar3");
@@ -69,6 +199,8 @@ public class Questions : MonoBehaviour
         barNine = GameObject.Find("Bar9");
         barTen = GameObject.Find("Bar10");
 
+        questionText = GameObject.Find("QuestionText");
+
         barOne.GetComponentInChildren<TMP_Text>().text = answerOne;
         barTwo.GetComponentInChildren<TMP_Text>().text = answerTwo;
         barThree.GetComponentInChildren<TMP_Text>().text = answerThree;
@@ -79,6 +211,8 @@ public class Questions : MonoBehaviour
         barEight.GetComponentInChildren<TMP_Text>().text = answerEight;
         barNine.GetComponentInChildren<TMP_Text>().text = answerNine;
         barTen.GetComponentInChildren<TMP_Text>().text = answerTen;
+
+        questionText.GetComponent<TMP_Text>().text = currentQuestionText;
 
         barOne.SetActive(true);
         barTwo.SetActive(true);
@@ -102,6 +236,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredOne == false)
                 {
+                    currentQuestionText = questionOne;
                     questionUp = true;
                 }
             }
@@ -109,6 +244,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredTwo == false)
                 {
+                    currentQuestionText = questionTwo;
                     questionUp = true;
                 }
             }
@@ -116,6 +252,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredThree == false)
                 {
+                    currentQuestionText = questionThree;
                     questionUp = true;
                 }
             }
@@ -123,6 +260,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredFour == false)
                 {
+                    currentQuestionText = questionFour;
                     questionUp = true;
                 }
             }
@@ -130,6 +268,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredFive == false)
                 {
+                    currentQuestionText = questionFive;
                     questionUp = true;
                 }
             }
@@ -137,6 +276,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredSix == false)
                 {
+                    currentQuestionText = questionSix;
                     questionUp = true;
                 }
             }
@@ -144,6 +284,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredSeven == false)
                 {
+                    currentQuestionText = questionSeven;
                     questionUp = true;
                 }
             }
@@ -151,6 +292,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredEight == false)
                 {
+                    currentQuestionText = questionEight;
                     questionUp = true;
                 }
             }
@@ -158,6 +300,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredNine == false)
                 {
+                    currentQuestionText = questionNine;
                     questionUp = true;
                 }
             }
@@ -165,6 +308,7 @@ public class Questions : MonoBehaviour
             {
                 if (answeredTen == false)
                 {
+                    currentQuestionText = questionTen;
                     questionUp = true;
                 }
             }
