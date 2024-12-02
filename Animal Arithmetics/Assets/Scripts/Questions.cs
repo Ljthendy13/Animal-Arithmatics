@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManager;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Questions : MonoBehaviour
 {
@@ -56,7 +58,27 @@ public class Questions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("Bar1").GetComponentInChildren<Text>().text = answeredOne;
+        barOne = GameObject.Find("Bar1");
+        barTwo = GameObject.Find("Bar2");
+        barThree = GameObject.Find("Bar3");
+        barFour = GameObject.Find("Bar4");
+        barFive = GameObject.Find("Bar5");
+        barSix = GameObject.Find("Bar6");
+        barSeven = GameObject.Find("Bar7");
+        barEight = GameObject.Find("Bar8");
+        barNine = GameObject.Find("Bar9");
+        barTen = GameObject.Find("Bar10");
+
+        barOne.GetComponentInChildren<TMP_Text>().text = answerOne;
+        barTwo.GetComponentInChildren<TMP_Text>().text = answerTwo;
+        barThree.GetComponentInChildren<TMP_Text>().text = answerThree;
+        barFour.GetComponentInChildren<TMP_Text>().text = answerFour;
+        barFive.GetComponentInChildren<TMP_Text>().text = answerFive;
+        barSix.GetComponentInChildren<TMP_Text>().text = answerSix;
+        barSeven.GetComponentInChildren<TMP_Text>().text = answerSeven;
+        barEight.GetComponentInChildren<TMP_Text>().text = answerEight;
+        barNine.GetComponentInChildren<TMP_Text>().text = answerNine;
+        barTen.GetComponentInChildren<TMP_Text>().text = answerTen;
 
         barOne.SetActive(true);
         barTwo.SetActive(true);
