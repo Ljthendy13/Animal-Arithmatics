@@ -58,13 +58,57 @@ public class Questions : MonoBehaviour
 
     public GameObject questionText;
 
+    public AudioSource Correct;
+    public AudioSource Incorrect;
+    public AudioSource FieldMusic;
+
+    public GameObject pet1;
+    public GameObject pet2;
+    public GameObject pet3;
+    public GameObject pet4;
+    public GameObject pet5;
+    public AudioSource pet1Sound;
+    public AudioSource pet2Sound;
+    public AudioSource pet3Sound;
+    public AudioSource pet4Sound;
+    public AudioSource pet5Sound;
+
+    public bool won = false;
+    public GameObject wonText;
+
     // Start is called before the first frame update
     void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if (scene == "Level 1")
+        Correct = GameObject.Find("CorrectSoundController").GetComponent<AudioSource>();
+        Incorrect = GameObject.Find("IncorrectSoundController").GetComponent<AudioSource>();
+
+        pet1 = GameObject.Find("pet 1");
+        pet2 = GameObject.Find("pet 2");
+        pet3 = GameObject.Find("pet 3");
+        pet4 = GameObject.Find("pet 4");
+        pet5 = GameObject.Find("pet 5");
+        pet1Sound = pet1.GetComponent<AudioSource>();
+        pet2Sound = pet2.GetComponent<AudioSource>();
+        pet3Sound = pet3.GetComponent<AudioSource>();
+        pet4Sound = pet4.GetComponent<AudioSource>();
+        pet5Sound = pet5.GetComponent<AudioSource>();
+
+        pet1.SetActive(false);
+        pet2.SetActive(false);
+        pet3.SetActive(false);
+        pet4.SetActive(false);
+        pet5.SetActive(false);
+
+        wonText = GameObject.Find("WonText");
+        wonText.SetActive(false);
+
+        if (scene.name == "Level 1")
         {
+            pet1.SetActive(true);
+            FieldMusic = GameObject.Find("FieldSoundController").GetComponent<AudioSource>();
+            FieldMusic.Play();
             questionOne = "What is 2 + 1?";
             questionTwo = "What is 3 + 2?";
             questionThree = "What is 5 - 1?";
@@ -87,8 +131,9 @@ public class Questions : MonoBehaviour
             answerNine = "0";
             answerTen = "9";
         }
-        else if (scene == "Level 2")
+        else if (scene.name == "Level 2")
         {
+            pet2.SetActive(true);
             questionOne = "What is 7 + 3?";
             questionTwo = "What is 10 - 4?";
             questionThree = "What is 9 - 5?";
@@ -111,8 +156,9 @@ public class Questions : MonoBehaviour
             answerNine = "3";
             answerTen = "8";
         }
-        else if (scene == "Level 3")
+        else if (scene.name == "Level 3")
         {
+            pet3.SetActive(true);
             questionOne = "What is 3 x 2?";
             questionTwo = "What is 4 x 2?";
             questionThree = "What is 12 ÷ 3?";
@@ -135,8 +181,9 @@ public class Questions : MonoBehaviour
             answerNine = "15";
             answerTen = "10";
         }
-        else if (scene == "Level 4")
+        else if (scene.name == "Level 4")
         {
+            pet4.SetActive(true);
             questionOne = "What is 8 x 3?";
             questionTwo = "What is 18 ÷ 6?";
             questionThree = "What is 6 x 5?";
@@ -159,8 +206,9 @@ public class Questions : MonoBehaviour
             answerNine = "36";
             answerTen = "10";
         }
-        else if (scene == "Level 5")
+        else if (scene.name == "Level 5")
         {
+            pet5.SetActive(true);
             questionOne = "What is 12 x 3?";
             questionTwo = "What is 36 ÷ 6?";
             questionThree = "What is 8 x 4?";
@@ -212,8 +260,6 @@ public class Questions : MonoBehaviour
         barNine.GetComponentInChildren<TMP_Text>().text = answerNine;
         barTen.GetComponentInChildren<TMP_Text>().text = answerTen;
 
-        questionText.GetComponent<TMP_Text>().text = currentQuestionText;
-
         barOne.SetActive(true);
         barTwo.SetActive(true);
         barThree.SetActive(true);
@@ -237,6 +283,7 @@ public class Questions : MonoBehaviour
                 if (answeredOne == false)
                 {
                     currentQuestionText = questionOne;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -245,6 +292,7 @@ public class Questions : MonoBehaviour
                 if (answeredTwo == false)
                 {
                     currentQuestionText = questionTwo;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -253,6 +301,7 @@ public class Questions : MonoBehaviour
                 if (answeredThree == false)
                 {
                     currentQuestionText = questionThree;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -261,6 +310,7 @@ public class Questions : MonoBehaviour
                 if (answeredFour == false)
                 {
                     currentQuestionText = questionFour;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -269,6 +319,7 @@ public class Questions : MonoBehaviour
                 if (answeredFive == false)
                 {
                     currentQuestionText = questionFive;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -277,6 +328,7 @@ public class Questions : MonoBehaviour
                 if (answeredSix == false)
                 {
                     currentQuestionText = questionSix;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -285,6 +337,7 @@ public class Questions : MonoBehaviour
                 if (answeredSeven == false)
                 {
                     currentQuestionText = questionSeven;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -293,6 +346,7 @@ public class Questions : MonoBehaviour
                 if (answeredEight == false)
                 {
                     currentQuestionText = questionEight;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -301,6 +355,7 @@ public class Questions : MonoBehaviour
                 if (answeredNine == false)
                 {
                     currentQuestionText = questionNine;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -309,6 +364,7 @@ public class Questions : MonoBehaviour
                 if (answeredTen == false)
                 {
                     currentQuestionText = questionTen;
+                    questionText.GetComponent<TMP_Text>().text = currentQuestionText;
                     questionUp = true;
                 }
             }
@@ -334,7 +390,12 @@ public class Questions : MonoBehaviour
                                         {
                                             if (answeredTen == true)
                                             {
-                                                Debug.Log("Level Cleared.");
+                                                if (won == false)
+                                                {
+                                                    StartCoroutine(Win());
+                                                    wonText.SetActive(true);
+                                                    won = true;
+                                                }
                                             }
                                         }
                                     }
@@ -351,13 +412,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 0)
         {
+            Correct.Play();
             barOne.SetActive(false);
             answeredOne = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -365,13 +427,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 1)
         {
+            Correct.Play();
             barTwo.SetActive(false);
             answeredTwo = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -379,13 +442,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 2)
         {
+            Correct.Play();
             barThree.SetActive(false);
             answeredThree = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -393,13 +457,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 3)
         {
+            Correct.Play();
             barFour.SetActive(false);
             answeredFour = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -407,13 +472,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 4)
         {
+            Correct.Play();
             barFive.SetActive(false);
             answeredFive = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -421,13 +487,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 5)
         {
+            Correct.Play();
             barSix.SetActive(false);
             answeredSix = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -435,13 +502,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 6)
         {
+            Correct.Play();
             barSeven.SetActive(false);
             answeredSeven = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -449,13 +517,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 7)
         {
+            Correct.Play();
             barEight.SetActive(false);
             answeredEight = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -463,13 +532,14 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 8)
         {
+            Correct.Play();
             barNine.SetActive(false);
             answeredNine = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
     }
 
@@ -477,13 +547,28 @@ public class Questions : MonoBehaviour
     {
         if (currentQuestion == 9)
         {
+            Correct.Play();
             barTen.SetActive(false);
             answeredTen = true;
             questionUp = false;
         }
         else
         {
-            Debug.Log("Wrong Answer.");
+            Incorrect.Play();
         }
+    }
+
+    public IEnumerator Win()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "Level 1")
+        {
+            pet1Sound.Play();
+        }
+
+        yield return new WaitForSeconds(5);
+
+        Debug.Log("Would Switch Scene");
     }
 }
