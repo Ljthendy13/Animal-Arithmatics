@@ -617,6 +617,22 @@ public class Questions : MonoBehaviour
         {
             pet1Sound.Play();
         }
+        if (scene.name == "Level 2")
+        {
+            pet2Sound.Play();
+        }
+        if (scene.name == "Level 3")
+        {
+            pet3Sound.Play();
+        }
+        if (scene.name == "Level 4")
+        {
+            pet4Sound.Play();
+        }
+        if (scene.name == "Level 5")
+        {
+            pet5Sound.Play();
+        }
 
         yield return new WaitForSeconds(2);
 
@@ -627,6 +643,6 @@ public class Questions : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        Debug.Log("Would Switch Scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
