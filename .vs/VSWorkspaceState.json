@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Animal Arithmetics",
+    "\\Animal Arithmetics\\Assets",
+    "\\Animal Arithmetics\\Assets\\Scripts"
   ],
-  "SelectedNode": "\\ExampleScriptGitHubTest.cs",
+  "SelectedNode": "\\Animal Arithmetics\\Assets\\Scripts\\Questions.cs",
   "PreviewInSolutionExplorer": false
 }
