@@ -56,11 +56,27 @@ public class Questions : MonoBehaviour
     public GameObject barNine;
     public GameObject barTen;
 
+    public GameObject barOneReal;
+    public GameObject barTwoReal;
+    public GameObject barThreeReal;
+    public GameObject barFourReal;
+    public GameObject barFiveReal;
+    public GameObject barSixReal;
+    public GameObject barSevenReal;
+    public GameObject barEightReal;
+    public GameObject barNineReal;
+    public GameObject barTenReal;
+
     public GameObject questionText;
 
     public AudioSource Correct;
     public AudioSource Incorrect;
+    public AudioSource Treasure;
     public AudioSource FieldMusic;
+    public AudioSource LakesideMusic;
+    public AudioSource DnightMusic;
+    public AudioSource DwoodMusic;
+    public AudioSource CwallMusic;
 
     public GameObject pet1;
     public GameObject pet2;
@@ -75,6 +91,8 @@ public class Questions : MonoBehaviour
 
     public bool won = false;
     public GameObject wonText;
+    public GameObject gemText;
+    public GameObject gemController;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +101,7 @@ public class Questions : MonoBehaviour
 
         Correct = GameObject.Find("CorrectSoundController").GetComponent<AudioSource>();
         Incorrect = GameObject.Find("IncorrectSoundController").GetComponent<AudioSource>();
+        Treasure = GameObject.Find("TreasureSoundController").GetComponent<AudioSource>();
 
         pet1 = GameObject.Find("pet 1");
         pet2 = GameObject.Find("pet 2");
@@ -103,6 +122,10 @@ public class Questions : MonoBehaviour
 
         wonText = GameObject.Find("WonText");
         wonText.SetActive(false);
+        gemText = GameObject.Find("GemText");
+        gemText.SetActive(false);
+        gemController = GameObject.Find("GemController");
+        gemController.SetActive(false);
 
         if (scene.name == "Level 1")
         {
@@ -134,6 +157,8 @@ public class Questions : MonoBehaviour
         else if (scene.name == "Level 2")
         {
             pet2.SetActive(true);
+            LakesideMusic = GameObject.Find("LakesideSoundController").GetComponent<AudioSource>();
+            LakesideMusic.Play();
             questionOne = "What is 7 + 3?";
             questionTwo = "What is 10 - 4?";
             questionThree = "What is 9 - 5?";
@@ -159,6 +184,8 @@ public class Questions : MonoBehaviour
         else if (scene.name == "Level 3")
         {
             pet3.SetActive(true);
+            DnightMusic = GameObject.Find("DnightSoundController").GetComponent<AudioSource>();
+            DnightMusic.Play();
             questionOne = "What is 3 x 2?";
             questionTwo = "What is 4 x 2?";
             questionThree = "What is 12 ÷ 3?";
@@ -184,6 +211,8 @@ public class Questions : MonoBehaviour
         else if (scene.name == "Level 4")
         {
             pet4.SetActive(true);
+            DwoodMusic = GameObject.Find("DwoodSoundController").GetComponent<AudioSource>();
+            DwoodMusic.Play();
             questionOne = "What is 8 x 3?";
             questionTwo = "What is 18 ÷ 6?";
             questionThree = "What is 6 x 5?";
@@ -209,6 +238,8 @@ public class Questions : MonoBehaviour
         else if (scene.name == "Level 5")
         {
             pet5.SetActive(true);
+            CwallMusic = GameObject.Find("CwallSoundController").GetComponent<AudioSource>();
+            CwallMusic.Play();
             questionOne = "What is 12 x 3?";
             questionTwo = "What is 36 ÷ 6?";
             questionThree = "What is 8 x 4?";
@@ -246,6 +277,16 @@ public class Questions : MonoBehaviour
         barEight = GameObject.Find("Bar8");
         barNine = GameObject.Find("Bar9");
         barTen = GameObject.Find("Bar10");
+        barOneReal = GameObject.Find("bar (1)");
+        barTwoReal = GameObject.Find("bar (2)");
+        barThreeReal = GameObject.Find("bar (3)");
+        barFourReal = GameObject.Find("bar (4)");
+        barFiveReal = GameObject.Find("bar (5)");
+        barSixReal = GameObject.Find("bar (6)");
+        barSevenReal = GameObject.Find("bar (7)");
+        barEightReal = GameObject.Find("bar (8)");
+        barNineReal = GameObject.Find("bar (9)");
+        barTenReal = GameObject.Find("bar (10)");
 
         questionText = GameObject.Find("QuestionText");
 
@@ -414,6 +455,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barOne.SetActive(false);
+            barOneReal.SetActive(false);
             answeredOne = true;
             questionUp = false;
         }
@@ -429,6 +471,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barTwo.SetActive(false);
+            barTwoReal.SetActive(false);
             answeredTwo = true;
             questionUp = false;
         }
@@ -444,6 +487,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barThree.SetActive(false);
+            barThreeReal.SetActive(false);
             answeredThree = true;
             questionUp = false;
         }
@@ -459,6 +503,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barFour.SetActive(false);
+            barFourReal.SetActive(false);
             answeredFour = true;
             questionUp = false;
         }
@@ -474,6 +519,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barFive.SetActive(false);
+            barFiveReal.SetActive(false);
             answeredFive = true;
             questionUp = false;
         }
@@ -489,6 +535,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barSix.SetActive(false);
+            barSixReal.SetActive(false);
             answeredSix = true;
             questionUp = false;
         }
@@ -504,6 +551,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barSeven.SetActive(false);
+            barSevenReal.SetActive(false);
             answeredSeven = true;
             questionUp = false;
         }
@@ -519,6 +567,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barEight.SetActive(false);
+            barEightReal.SetActive(false);
             answeredEight = true;
             questionUp = false;
         }
@@ -534,6 +583,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barNine.SetActive(false);
+            barNineReal.SetActive(false);
             answeredNine = true;
             questionUp = false;
         }
@@ -549,6 +599,7 @@ public class Questions : MonoBehaviour
         {
             Correct.Play();
             barTen.SetActive(false);
+            barTenReal.SetActive(false);
             answeredTen = true;
             questionUp = false;
         }
@@ -567,7 +618,14 @@ public class Questions : MonoBehaviour
             pet1Sound.Play();
         }
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
+
+        wonText.SetActive(false);
+        gemText.SetActive(true);
+        gemController.SetActive(true);
+        Treasure.Play();
+
+        yield return new WaitForSeconds(3);
 
         Debug.Log("Would Switch Scene");
     }
