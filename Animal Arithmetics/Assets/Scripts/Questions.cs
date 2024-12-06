@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class Questions : MonoBehaviour
 {
+    public GameObject SaveHolder;
+    public SaveController SaveController;
+
     public string questionOne = "Question One";
     public string questionTwo = "Question Two";
     public string questionThree = "Question Three";
@@ -98,6 +101,10 @@ public class Questions : MonoBehaviour
     void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
+
+        SaveHolder = GameObject.Find("SaveHolder");
+
+        SaveController = SaveHolder.GetComponent<SaveController>();
 
         Correct = GameObject.Find("CorrectSoundController").GetComponent<AudioSource>();
         Incorrect = GameObject.Find("IncorrectSoundController").GetComponent<AudioSource>();
@@ -640,9 +647,51 @@ public class Questions : MonoBehaviour
         gemText.SetActive(true);
         gemController.SetActive(true);
         Treasure.Play();
+        if (scene.name == "Level 1")
+        {
+            if (SaveController.boolLevel1Beat != 1)
+            {
+                SaveController.numberOfGemsOwned++;
+                SaveController.boolLevel1Beat = 1;
+            }
+        }
+        if (scene.name == "Level 2")
+        {
+            if (SaveController.boolLevel2Beat != 1)
+            {
+                SaveController.numberOfGemsOwned++;
+                SaveController.boolLevel2Beat = 1;
+            }
+        }
+        if (scene.name == "Level 3")
+        {
+            if (SaveController.boolLevel3Beat != 1)
+            {
+                SaveController.numberOfGemsOwned++;
+                SaveController.boolLevel3Beat = 1;
+            }
+        }
+        if (scene.name == "Level 4")
+        {
+            if (SaveController.boolLevel4Beat != 1)
+            {
+                SaveController.numberOfGemsOwned++;
+                SaveController.boolLevel4Beat = 1;
+            }
+        }
+        if (scene.name == "Level 5")
+        {
+            if (SaveController.boolLevel5Beat != 1)
+            {
+                SaveController.numberOfGemsOwned++;
+                SaveController.boolLevel5Beat = 1;
+            }
+        }
 
         yield return new WaitForSeconds(3);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SaveController.ForceSave();
+
+        SceneManager.LoadScene("LevelSelect");
     }
 }
