@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "version": 2,
   "dgSpecHash": "wXqaa6OkbVk=",
@@ -5,4 +6,13 @@
   "projectFilePath": "C:\\Users\\School Account\\source\\repos\\Test\\Test\\Test.csproj",
   "expectedPackageFiles": [],
   "logs": []
+=======
+{
+  "version": 2,
+  "dgSpecHash": "wXqaa6OkbVk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\School Account\\source\\repos\\Test\\Test\\Test.csproj",
+  "expectedPackageFiles": [],
+  "logs": []
+>>>>>>> 2adb9ce1fc14dbe47d42d5828d87207c81f2568a
 }
