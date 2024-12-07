@@ -97,7 +97,15 @@ public class Questions : MonoBehaviour
     public GameObject gemText;
     public GameObject gemController;
 
-    // Start is called before the first frame update
+    public int numberOfHeartsLeft;
+
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    public GameObject heart4;
+    public GameObject heart5;
+    public GameObject heart6;
+
     void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
@@ -105,6 +113,15 @@ public class Questions : MonoBehaviour
         SaveHolder = GameObject.Find("SaveHolder");
 
         SaveController = SaveHolder.GetComponent<SaveController>();
+
+        numberOfHeartsLeft = SaveController.numberOfHeartsOwned;
+
+        heart1 = GameObject.Find("heart (1)");
+        heart2 = GameObject.Find("heart (2)");
+        heart3 = GameObject.Find("heart (3)");
+        heart4 = GameObject.Find("heart (4)");
+        heart5 = GameObject.Find("heart (5)");
+        heart6 = GameObject.Find("heart (6)");
 
         Correct = GameObject.Find("CorrectSoundController").GetComponent<AudioSource>();
         Incorrect = GameObject.Find("IncorrectSoundController").GetComponent<AudioSource>();
@@ -320,7 +337,6 @@ public class Questions : MonoBehaviour
         barTen.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (questionUp == false)
@@ -454,6 +470,65 @@ public class Questions : MonoBehaviour
                 }
             }
         }
+
+        if (numberOfHeartsLeft > 5)
+        {
+            heart6.SetActive(true);
+            heart5.SetActive(true);
+            heart4.SetActive(true);
+            heart3.SetActive(true);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if (numberOfHeartsLeft > 4)
+        {
+            heart6.SetActive(false);
+            heart5.SetActive(true);
+            heart4.SetActive(true);
+            heart3.SetActive(true);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if (numberOfHeartsLeft > 3)
+        {
+            heart6.SetActive(false);
+            heart5.SetActive(false);
+            heart4.SetActive(true);
+            heart3.SetActive(true);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if (numberOfHeartsLeft > 2)
+        {
+            heart6.SetActive(false);
+            heart5.SetActive(false);
+            heart4.SetActive(false);
+            heart3.SetActive(true);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if (numberOfHeartsLeft > 1)
+        {
+            heart6.SetActive(false);
+            heart5.SetActive(false);
+            heart4.SetActive(false);
+            heart3.SetActive(false);
+            heart2.SetActive(true);
+            heart1.SetActive(true);
+        }
+        else if (numberOfHeartsLeft > 0)
+        {
+            heart6.SetActive(false);
+            heart5.SetActive(false);
+            heart4.SetActive(false);
+            heart3.SetActive(false);
+            heart2.SetActive(false);
+            heart1.SetActive(true);
+        }
+        if (numberOfHeartsLeft <= 0)
+        {
+            SceneManager.LoadScene("LevelSelect");
+        }
     }
 
     public void AnsweredOne()
@@ -469,6 +544,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -485,6 +561,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -501,6 +578,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -517,6 +595,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -533,6 +612,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -549,6 +629,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -565,6 +646,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -581,6 +663,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -597,6 +680,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 
@@ -613,6 +697,7 @@ public class Questions : MonoBehaviour
         else
         {
             Incorrect.Play();
+            numberOfHeartsLeft--;
         }
     }
 

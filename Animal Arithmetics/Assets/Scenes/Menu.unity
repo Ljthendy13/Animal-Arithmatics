@@ -718,7 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f7a90117066e74c8c83db014c4809d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfHeartsOwned: 0
+  numberOfHeartsOwned: 1
   numberOfGemsOwned: 0
   boolLevel1Beat: 0
   boolLevel2Beat: 0

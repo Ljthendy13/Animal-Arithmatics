@@ -7,7 +7,7 @@ public class SaveController : MonoBehaviour
 {
     public static SaveController Instance;
 
-    public int numberOfHeartsOwned;
+    public int numberOfHeartsOwned = 1;
     public int numberOfGemsOwned;
 
     public int boolLevel1Beat;

@@ -78,4 +78,9 @@ public class LevelSelect : MonoBehaviour
     {
         SceneManager.LoadScene("Level 6");
     }
+
+    public void loadShop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
 }
