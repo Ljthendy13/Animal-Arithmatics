@@ -190,7 +190,7 @@ public class Questions : MonoBehaviour
             questionFive = "What is 10 + 2?";
             questionSix = "What is 14 - 7?";
             questionSeven = "What is 5 + 6?";
-            questionEight = "What is 9 + 3?";
+            questionEight = "What is 9 + 9?";
             questionNine = "What is 12 - 9?";
             questionTen = "What is 15 - 7?";
 
@@ -201,7 +201,7 @@ public class Questions : MonoBehaviour
             answerFive = "12";
             answerSix = "7";
             answerSeven = "11";
-            answerEight = "12";
+            answerEight = "18";
             answerNine = "3";
             answerTen = "8";
         }
@@ -285,6 +285,32 @@ public class Questions : MonoBehaviour
             answerEight = "7";
             answerNine = "35";
             answerTen = "11";
+        }
+        else if (scene.name == "Level 6")
+        {
+            CwallMusic = GameObject.Find("CwallSoundController").GetComponent<AudioSource>();
+            CwallMusic.Play();
+            questionOne = "What is 15 x 3?";
+            questionTwo = "What is 45 ÷ 3?";
+            questionThree = "What is 14 x 2?";
+            questionFour = "What is 56 ÷ 7?";
+            questionFive = "What is 8 x 8?";
+            questionSix = "What is 49 ÷ 7?";
+            questionSeven = "What is 12 x 4?";
+            questionEight = "What is 48 ÷ 4?";
+            questionNine = "What is 9 x 9?";
+            questionTen = "What is 81 ÷ 9?";
+
+            answerOne = "45";
+            answerTwo = "15";
+            answerThree = "28";
+            answerFour = "8";
+            answerFive = "64";
+            answerSix = "7";
+            answerSeven = "48";
+            answerEight = "12";
+            answerNine = "81";
+            answerTen = "9";
         }
         else
         {
