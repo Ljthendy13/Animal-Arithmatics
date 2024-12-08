@@ -752,55 +752,57 @@ public class Questions : MonoBehaviour
             pet5Sound.Play();
         }
 
-        yield return new WaitForSeconds(2);
+        if (scene.name != "Level 6")
+        {
+            yield return new WaitForSeconds(2);
 
-        wonText.SetActive(false);
-        gemText.SetActive(true);
-        gemController.SetActive(true);
-        Treasure.Play();
-        if (scene.name == "Level 1")
-        {
-            if (SaveController.boolLevel1Beat != 1)
+            wonText.SetActive(false);
+            gemText.SetActive(true);
+            gemController.SetActive(true);
+            Treasure.Play();
+            if (scene.name == "Level 1")
             {
-                SaveController.numberOfGemsOwned++;
-                SaveController.boolLevel1Beat = 1;
+                if (SaveController.boolLevel1Beat != 1)
+                {
+                    SaveController.numberOfGemsOwned++;
+                    SaveController.boolLevel1Beat = 1;
+                }
+            }
+            if (scene.name == "Level 2")
+            {
+                if (SaveController.boolLevel2Beat != 1)
+                {
+                    SaveController.numberOfGemsOwned++;
+                    SaveController.boolLevel2Beat = 1;
+                }
+            }
+            if (scene.name == "Level 3")
+            {
+                if (SaveController.boolLevel3Beat != 1)
+                {
+                    SaveController.numberOfGemsOwned++;
+                    SaveController.boolLevel3Beat = 1;
+                }
+            }
+            if (scene.name == "Level 4")
+            {
+                if (SaveController.boolLevel4Beat != 1)
+                {
+                    SaveController.numberOfGemsOwned++;
+                    SaveController.boolLevel4Beat = 1;
+                }
+            }
+            if (scene.name == "Level 5")
+            {
+                if (SaveController.boolLevel5Beat != 1)
+                {
+                    SaveController.numberOfGemsOwned++;
+                    SaveController.boolLevel5Beat = 1;
+                }
             }
         }
-        if (scene.name == "Level 2")
-        {
-            if (SaveController.boolLevel2Beat != 1)
-            {
-                SaveController.numberOfGemsOwned++;
-                SaveController.boolLevel2Beat = 1;
-            }
-        }
-        if (scene.name == "Level 3")
-        {
-            if (SaveController.boolLevel3Beat != 1)
-            {
-                SaveController.numberOfGemsOwned++;
-                SaveController.boolLevel3Beat = 1;
-            }
-        }
-        if (scene.name == "Level 4")
-        {
-            if (SaveController.boolLevel4Beat != 1)
-            {
-                SaveController.numberOfGemsOwned++;
-                SaveController.boolLevel4Beat = 1;
-            }
-        }
-        if (scene.name == "Level 5")
-        {
-            if (SaveController.boolLevel5Beat != 1)
-            {
-                SaveController.numberOfGemsOwned++;
-                SaveController.boolLevel5Beat = 1;
-            }
-        }
-
         yield return new WaitForSeconds(3);
-
+                
         SaveController.ForceSave();
 
         SceneManager.LoadScene("LevelSelect");

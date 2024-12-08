@@ -3,8 +3,10 @@
     "",
     "\\Animal Arithmetics",
     "\\Animal Arithmetics\\Assets",
-    "\\Animal Arithmetics\\Assets\\Scripts"
+    "\\Animal Arithmetics\\Assets\\BackGrounds",
+    "\\Animal Arithmetics\\Assets\\Scripts",
+    "\\game assests",
+    "\\game assests\\player character and final boss"
   ],
-  "SelectedNode": "\\Animal Arithmetics\\Assets\\Scripts\\Questions.cs",
   "PreviewInSolutionExplorer": false
 }
